@@ -35,6 +35,10 @@ Creation of this package was inspired by capture-the-flag competitions where ran
 `rand` function on a typical Windows or Linux target would not match those generated on a macOS device (macOS generally 
 uses Clang rather than glibc). This package exists to fill that gap and enable reproduction regardless of platform.
 
+This package currently supports PRNGs used for `rand()` on a version of the GNU, macOS, and FreeBSD C libraries. It is
+the author's intent to eventually expand out the scope of algorithms available alongside perform additional testing to
+determine the versions used by individual operating systems.
+
 # Installation
 
 This package is available on [PyPI](https://pypi.org/project/libprng/) and can be installed using `pip`:
@@ -180,6 +184,27 @@ for random_int in random_generator:
 
 </details>
 
+<details style="border: 1px solid; border-radius: 8px; padding: 8px; margin-top: 4px;">
+<summary>🍎 Apple / Former FreeBSD C Library: Non-Weak Seeding</summary>
+
+This uses the current algorithm used on macOS. It was formerly used on FreeBSD; however, it is no longer available in 
+recent versions.
+
+There is an additional version of the algorithm available on macOS and former versions of FreeBSD when electing to use
+weak seeding (or ancient versions), which is not yet available in this package.
+
+Initialize the global PRNG random data instance with a seed and generate a single random integer:
+
+```python
+from libprng.apple import srand, rand
+
+
+srand(1234)
+print(rand())
+```
+
+</details>
+
 # Security
 
 Pseudo-random number generators are generally insufficient for cryptographic or security-sensitive use cases. Likewise,
@@ -188,9 +213,12 @@ security-sensitive use cases, such as password generation, encryption, or key de
 
 # Backlog
 
-This package is still under active development. The following features are anticipated:
+This package is still under active development. The following features are expected:
 
-- Clang PRNG implementation
+- Implementations:
+  - [FreeBSD Current](https://github.com/freebsd/freebsd-src/blob/main/lib/libc/stdlib/rand.c)
+  - [Apple/FreeBSD with Weak Seeding](https://github.com/apple-oss-distributions/Libc/blob/Libc-1353.11.2/stdlib/FreeBSD/rand.c)
+  - Python
 - Command-line PRNG utility
 
 # License
