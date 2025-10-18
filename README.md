@@ -1,6 +1,17 @@
 <!--suppress HtmlDeprecatedAttribute-->
 <div align="center">
    <h1>🎲 libprng</h1>
+
+[![Build Status](https://github.com/Jayson-Fong/libprng/actions/workflows/python-package.yml/badge.svg?branch=main)](https://github.com/Jayson-Fong/libprng/actions/workflows/python-package.yml)
+[![Coverage](https://img.shields.io/badge/coverage-0%25-red)](https://github.com/Jayson-Fong/libprng/actions/workflows/python-package.yml)
+[![Latest Version](https://img.shields.io/pypi/v/libprng.svg)](https://pypi.org/project/libprng/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/libprng.svg)](https://pypi.org/project/libprng/)
+[![Format](https://img.shields.io/pypi/format/libprng.svg)](https://pypi.org/project/libprng/)
+[![License](https://img.shields.io/pypi/l/libprng)](https://github.com/Jayson-Fong/tabularize/blob/main/README.md)
+[![Status](https://img.shields.io/pypi/status/libprng)](https://pypi.org/project/libprng/)
+[![Types](https://img.shields.io/pypi/types/libprng)](https://pypi.org/project/libprng/)
+
+
 </div>
 
 <hr />
@@ -8,7 +19,7 @@
 <div align="center">
 
 [💼 Purpose](#purpose) | [🛠️️ Installation](#installation) | [⚙️ Usage](#usage) | [🛡️ Security](#security) | 
-[⚖️ License](#license)
+[📋 Backlog](#backlog) | [⚖️ License](#license)
 
 </div>
 
@@ -174,6 +185,13 @@ for random_int in random_generator:
 Pseudo-random number generators are generally insufficient for cryptographic or security-sensitive use cases. Likewise,
 this package was designed for reproducibility—not security or cryptography. You should **not** use this package for 
 security-sensitive use cases, such as password generation, encryption, or key derivation.
+
+# Backlog
+
+This package is still under active development. The following features are anticipated:
+
+- Clang PRNG implementation
+- Command-line PRNG utility
 
 # License
 
