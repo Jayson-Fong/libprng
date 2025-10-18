@@ -7,7 +7,7 @@
 [![Latest Version](https://img.shields.io/pypi/v/libprng.svg)](https://pypi.org/project/libprng/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/libprng.svg)](https://pypi.org/project/libprng/)
 [![Format](https://img.shields.io/pypi/format/libprng.svg)](https://pypi.org/project/libprng/)
-[![License](https://img.shields.io/pypi/l/libprng)](https://github.com/Jayson-Fong/tabularize/blob/main/README.md)
+[![License](https://img.shields.io/pypi/l/libprng)](https://github.com/Jayson-Fong/libprng/blob/main/README.md)
 [![Status](https://img.shields.io/pypi/status/libprng)](https://pypi.org/project/libprng/)
 [![Types](https://img.shields.io/pypi/types/libprng)](https://pypi.org/project/libprng/)
 
