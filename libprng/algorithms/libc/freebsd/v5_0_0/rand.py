@@ -37,14 +37,9 @@
 #   https://github.com/freebsd/freebsd-src/blob/47227ef0ef663b7abb81ab5a60a450da9a93d24b/lib/libc/stdlib/rand.c
 
 
-from dataclasses import dataclass
 from typing import Tuple
 
-
-@dataclass(slots=True)
-class Seed:
-    value: int
-
+from .....definitions import Seed
 
 GLOBAL_STATE: Seed = Seed(1)
 
@@ -72,4 +67,4 @@ def srand(state: int = 0):
     GLOBAL_STATE.value = state
 
 
-__all__: Tuple[str, ...] = ("Seed", "do_rand", "rand", "srand")
+__all__: Tuple[str, ...] = ("do_rand", "rand", "srand")

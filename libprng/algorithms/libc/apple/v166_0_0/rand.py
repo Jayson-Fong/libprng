@@ -30,13 +30,16 @@
 # - stdlib/rand.c
 # It was rewritten for Python by Jayson Fong, 2025.
 #
-# Original sources that this file was based on and validated against are available at:
+# Original sources that this file was based on are available at:
 #   https://github.com/apple-oss-distributions/Libc/blob/bf35f81f8e712c9640fb1b0aed280b1b9c752aaf/stdlib/FreeBSD/rand.c
+# Original sources that this file was validated against are available at:
+#   https://github.com/freebsd/freebsd-src/blob/8503f4f13f77abf7adc8f7e329c6f9c1d52b6a20/lib/libc/stdlib/rand.c
 
 from typing import Tuple
 
 
-from ..freebsd.v5_1_0 import do_rand as _do_rand, Seed
+from ...freebsd.v1_0_0.rand import do_rand as _do_rand
+from .....definitions import Seed
 
 
 GLOBAL_STATE: Seed = Seed(1)
@@ -57,4 +60,4 @@ def srand(state: int = 0):
     GLOBAL_STATE.value = state
 
 
-__all__: Tuple[str, ...] = ("Seed", "do_rand", "rand", "srand")
+__all__: Tuple[str, ...] = ("do_rand", "rand", "srand")

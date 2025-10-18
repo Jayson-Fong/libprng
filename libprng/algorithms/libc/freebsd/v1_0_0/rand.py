@@ -34,24 +34,21 @@
 #   https://github.com/apple-oss-distributions/Libc/blob/bf35f81f8e712c9640fb1b0aed280b1b9c752aaf/stdlib/FreeBSD/rand.c
 #
 # Sources that this file was validated against are available at:
-#   https://github.com/freebsd/freebsd-src/blob/196dcb487d15e63d76c2cdd9ad58a847849c6e9e/lib/libc/stdlib/rand.c
+#   - https://github.com/freebsd/freebsd-src/blob/c6085d40c17b76abbaa35c8c53f14904021df451/lib/libc/stdlib/rand.c
+#   - https://github.com/freebsd/freebsd-src/blob/8503f4f13f77abf7adc8f7e329c6f9c1d52b6a20/lib/libc/stdlib/rand.c
 
 
 from typing import Tuple
 
-from .v5_0_0 import do_rand as _do_rand, Seed
+from .....definitions import Seed
 
 
 GLOBAL_STATE: Seed = Seed(1)
 
 
 def do_rand(state: int = 1) -> Tuple[int, int]:
-    # This algorithm is the same as the one used in FreeBSD 5.0.0,
-    # except that there exists a guard against state == 0.
-    if state == 0:
-        state = 123459876
-
-    return _do_rand(state)
+    state = state * 1103515245 + 12345
+    return state % 2147483648, state
 
 
 def rand() -> int:
@@ -65,4 +62,4 @@ def srand(state: int = 0):
     GLOBAL_STATE.value = state
 
 
-__all__: Tuple[str, ...] = ("Seed", "do_rand", "rand", "srand")
+__all__: Tuple[str, ...] = ("do_rand", "rand", "srand")
