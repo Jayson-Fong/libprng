@@ -205,6 +205,44 @@ print(rand())
 
 </details>
 
+# Distribution History
+
+<details style="border: 1px solid; border-radius: 8px; padding: 8px; margin-top: 4px;">
+<summary>😈 FreeBSD</summary>
+
+* v1.0.0: Initial Release
+* v1.1.0: `random()` Modified
+* v2.2.0: `random()` Modified
+* v5.0.0: `rand()` Modified
+* v5.1.0: `rand()` Modified
+
+FreeBSD versions after v5.1.0 have not yet been evaluated.
+
+</details>
+
+<details style="border: 1px solid; border-radius: 8px; padding: 8px; margin-top: 4px;">
+<summary>🍎 Apple</summary>
+
+* v166:
+  * `random()` Matches FreeBSD v1.1.0
+  * `rand()` Matches FreeBSD v1.0.0
+* v320:
+  * `random()` Matches FreeBSD v2.2.0
+  * `rand()` Matches FreeBSD v5.1.0
+
+</details>
+
+<details style="border: 1px solid; border-radius: 8px; padding: 8px; margin-top: 4px;">
+<summary>🐂 GNU</summary>
+
+* Current: 
+  * `random()` Matches FreeBSD v1.1.0
+  * `rand()` Matches FreeBSD v1.1.0 `random()`
+
+GNU versions prior to current have yet to be evaluated.
+
+</details>
+
 # Security
 
 Pseudo-random number generators are generally insufficient for cryptographic or security-sensitive use cases. Likewise,
@@ -217,7 +255,6 @@ This package is still under active development. The following features are expec
 
 - Implementations:
   - [FreeBSD Current](https://github.com/freebsd/freebsd-src/blob/main/lib/libc/stdlib/rand.c)
-  - [Apple/FreeBSD with Weak Seeding](https://github.com/apple-oss-distributions/Libc/blob/Libc-1353.11.2/stdlib/FreeBSD/rand.c)
   - Python
 - Command-line PRNG utility
 
